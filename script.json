@@ -48,6 +48,72 @@
         "yourself": "myself",
         "my": "your"
     },
+    "sentimentModifiers": {
+        "-2": [
+            "It sounds like this is really troubling you.",
+            "I'm here to listen if you'd like to share more.",
+            "I understand this might feel overwhelming right now.",
+            "It sounds like things are really difficult right now.",
+            "I'm here, and I can tell this isn't easy.",
+            "If it helps, I'm here to keep listening.",
+            "That must feel really heavy; I'm here with you.",
+            "It sounds rough; please feel free to share anything else on your mind."
+        ],
+        "-1": [
+            "That seems to be weighing on your mind.",
+            "It’s okay to feel this way. Let's work through it together.",
+            "I'm sorry to hear you're feeling this way.",
+            "That seems like it’s weighing you down.",
+            "It’s understandable to feel this way sometimes.",
+            "Please don’t hesitate to share; I’m here to listen.",
+            "I can sense that this is challenging. I’m here with you.",
+            "It’s okay to express your feelings. I’m here to help."
+        ],
+        "1": [
+            "That sounds encouraging!",
+            "It's great to hear things are going well for you.",
+            "Thank you for sharing this positive outlook.",
+            "It sounds like things are going well!",
+            "I'm glad to hear this bit of good news!",
+            "It’s wonderful to hear about the positive moments!",
+            "That’s great to hear! Keep up the good vibes.",
+            "Thank you for sharing this uplifting thought!"
+        ],
+        "2": [
+            "Wow, that’s fantastic!",
+            "It's wonderful to hear such enthusiasm!",
+            "I'm so glad to hear things are going so well!",
+            "That's absolutely fantastic!",
+            "Wow, I can feel the excitement from here!",
+            "What a wonderful thing to hear. Keep spreading that joy!",
+            "Amazing! Keep riding that wave of positivity!",
+            "It’s always a pleasure to hear such excitement!"
+        ]
+    },
+    "selfModifiers": {
+        "-2": [
+            "I'm sorry if I haven’t met your expectations. I'm here to improve.",
+            "I apologize if my responses weren't helpful. I’m here to listen better.",
+            "I appreciate the feedback and want to be as helpful as possible.",
+            "I'm sorry if I haven’t supported you well. I’ll do my best to improve.",
+            "I understand I may have fallen short. I’m here to listen and learn."
+        ],
+        "2": [
+            "Thank you! I'm glad I could be of help to you.",
+            "Wow, that means a lot! I’m here whenever you need to talk.",
+            "Your kind words make my day—thank you for trusting me!",
+            "I'm thrilled to hear you feel that way! I’ll keep doing my best.",
+            "It’s wonderful to know I’ve been helpful to you."
+        ]
+    },
+    "topicPhrases": [
+        "We've talked about a {topic}. Could we revisit something that’s been on your mind?",
+        "Earlier, you mentioned {topic}; would you like to explore that further?",
+        "Since you’ve shared a lot already, perhaps we could return to what you said about {topic}?",
+        "It sounds like {topic} was important. Shall we take another look at that?",
+        "We could go back to {topic} if you’re open to discussing it more.",
+        "Could it be connected to the {topic}?"
+    ],
     "keywords": [
         {
             "key": "sorry",
@@ -77,7 +143,8 @@
                         "Why do you remember $4 just now?",
                         "What in the present situation reminds you of $4?",
                         "What is the connection between me and $4?"
-                    ]
+                    ],
+                    "topic": "$4"
                 },
                 {
                     "decomposition": "* do you remember *",
@@ -87,7 +154,8 @@
                         "What about $5?",
                         "=what",
                         "You mentioned $5"
-                    ]
+                    ],
+                    "topic": "$5"
                 }
             ]
         },
@@ -102,7 +170,8 @@
                         "Do you wish that $3?",
                         "What do you think about $3?",
                         "Really, if $3?"
-                    ]
+                    ],
+                    "topic": "$3"
                 }
             ]
         },
@@ -118,7 +187,8 @@
                         "Have you dreamt $4 before?",
                         "=dream",
                         ":newkey"
-                    ]
+                    ],
+                    "topic": "$4"
                 }
             ]
         },
@@ -134,7 +204,8 @@
                         "What people appear in your dreams?",
                         "Don't you believe that dream has something to do with your problem?",
                         ":newkey"
-                    ]
+                    ],
+                    "topic": "your dreams"
                 }
             ]
         },
@@ -240,7 +311,8 @@
                         "Perhaps I am $4 in your fantasies",
                         "Do you sometimes think I am $4?",
                         "=what"
-                    ]
+                    ],
+                    "topic": ":me"
                 },
                 {
                     "decomposition": "* are *",
@@ -264,7 +336,8 @@
                         "What about your own $3?",
                         "Are you worried about someone else's $3?",
                         "Really, my $3?"
-                    ]
+                    ],
+                    "topic": ":me"
                 }
             ]
         },
@@ -305,7 +378,8 @@
                         "What do you think?",
                         "Perhaps I was $4",
                         "What if I had been $4?"
-                    ]
+                    ],
+                    "topic": ":me"
                 }
             ]
         },
@@ -322,7 +396,8 @@
                         "What if you never got $4",
                         "What would getting $4 mean to you?",
                         "What does wanting $4 have to do with this discussion?"
-                    ]
+                    ],
+                    "topic": "$4"
                 },
                 {
                     "decomposition": "* i am * [happy elated glad better] *",
@@ -331,7 +406,8 @@
                         "Has your treatment made you $5?",
                         "What makes you $5 just now?",
                         "Can you explain why you are suddenly $5?"
-                    ]
+                    ],
+                    "topic": "$6"
                 },
                 {
                     "decomposition": "* i was *",
@@ -395,7 +471,8 @@
                         "Perhaps in your fantasy we $3 each other",
                         "Do you wish to $3 me?",
                         "Do you $3 anyone else?"
-                    ]
+                    ],
+                    "topic": ":me"
                 },
                 {
                     "decomposition": "*",
@@ -410,7 +487,7 @@
         },
         {
             "key": "you",
-            "rank": 0,
+            "rank": 1,
             "rules": [
                 {
                     "decomposition": "* i remind you of *",
@@ -425,7 +502,8 @@
                         "Does it please you to believe I am $4?",
                         "Do you sometimes wish you were $4?",
                         "Perhaps you would like to be $4"
-                    ]
+                    ],
+                    "topic": ":me"
                 },
                 {
                     "decomposition": "* you * i",
@@ -446,7 +524,8 @@
                         "Oh, I $3",
                         "You're not really talking about me, are you?",
                         "What are your feelings now?"
-                    ]
+                    ],
+                    "topic": ":me"
                 }
             ]
         },
@@ -491,7 +570,8 @@
                         "Who else in your family $5?",
                         "Your $4",
                         "What else comes to mind when you think of your $4?"
-                    ]
+                    ],
+                    "topic": "$4"
                 },
                 {
                     "decomposition": "* my *",
@@ -514,7 +594,8 @@
                         "You believe I can $4, don't you?",
                         "You want me to be able to $4",
                         "Perhaps you would like to be able to $4 yourself"
-                    ]
+                    ],
+                    "topic": ":me"
                 },
                 {
                     "decomposition": "* can i *",
@@ -574,7 +655,8 @@
                         "Should you $5 yourself?",
                         "You want me to $5",
                         "=what"
-                    ]
+                    ],
+                    "topic": ":me"
                 },
                 {
                     "decomposition": "* why can't i *",
